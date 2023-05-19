@@ -8,8 +8,19 @@
   投稿者名：<%= @question.user_name %>
 </div>
 
-<%= form_with(model: [@question, @answer], local: true) do |form| %>
-  <%= form.text_area :content, placeholder: "回答する" %>
-  <%= form.text_field :user_name, placeholder: "ユーザー名" %>
-  <%= form.submit "POST" %>
+<div>
+  <%= form_with model: [@question, @answer], local: true do |form| %>
+    <%= form.text_area :content, placeholder: "回答する" %>
+    <%= form.text_field :user_name, placeholder: "ユーザー名" %>
+    <%= form.submit "POST" %>
+  <% end %>
+</div>
+
+<% @answers.each do |answer| %>
+<div>
+  回答：<%= answer.content %>
+</div>
+<div>
+  投稿者：<%= answer.user_name %>
+</div>
 <% end %>
