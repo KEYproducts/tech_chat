@@ -1,0 +1,35 @@
+<div class="main-wrapper">
+  <div class="main-container">
+    <div class="questions-container">
+
+      <% @questions.each do |question| %>
+        <div class="question">
+          <div class="question-left">
+            <div class="question-left__count">
+              0
+            </div>
+            <div class="question-left-bottom">
+              comments
+            </div>
+          </div>
+          <div class="question-right">
+            <div class="question-right-heading">
+              <div class="question-right-heading__title">
+                <%= link_to question.title, question_path(question.id) %>
+              </div>
+              <div class="question-right-heading__name">
+                <%= question.user_name %>
+              </div>
+            </div>
+            <div class="question-right__content">
+              <%= question.content %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+
+      
+
+    </div>
+  </div>
+</div>
