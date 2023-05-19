@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_05_08_021801) do
+ActiveRecord::Schema.define(version: 2023_05_19_020851) do
+
+  create_table "answers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+    t.text "content", null: false
+    t.string "user_name", null: false
+    t.bigint "question_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["question_id"], name: "index_answers_on_question_id"
+  end
 
   create_table "questions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "title"
@@ -20,4 +29,5 @@ ActiveRecord::Schema.define(version: 2023_05_08_021801) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "answers", "questions"
 end
