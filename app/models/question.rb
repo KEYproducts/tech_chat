@@ -1,7 +1,7 @@
 class Question < ApplicationRecord
   has_many :answers
-  
-  validates :title, precence: true
-  validates :content, precence: true
-  validates :user_name, precence: true
+
+  validates :title, presence: true
+  validates :content, presence: true
+  validates :user_name, presence: true
 end
