@@ -7,3 +7,9 @@
 <div>
   投稿者名：<%= @question.user_name %>
 </div>
+
+<%= form_with(model: [@question, @answer], local: true) do |form| %>
+  <%= form.text_area :content, placeholder: "回答する" %>
+  <%= form.text_field :user_name, placeholder: "ユーザー名" %>
+  <%= form.submit "POST" %>
+<% end %>
