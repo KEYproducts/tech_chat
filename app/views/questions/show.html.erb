@@ -1,20 +1,23 @@
-<div>
-  タイトル：<%= @question.title %>
-</div>
-<div>
-  質問内容：<%= @question.content %>
-</div>
-<div>
-  投稿者名：<%= @question.user_name %>
-</div>
+<div class="main-wrapper">
+  <div class="main-container">
 
-<div>
-  <%= form_with model: [@question, @answer], local: true do |form| %>
-    <%= form.text_area :content, placeholder: "回答する" %>
-    <%= form.text_field :user_name, placeholder: "ユーザー名" %>
-    <%= form.submit "POST" %>
-  <% end %>
-</div>
+    <div class="question-container">
+      <%= render 'question', { question: @question } %>
+    </div>
+
+    <div class="answer-form-container">
+      <%= form_with model: [@question, @answer], local: true do |form| %>
+        <%= form.text_area :content, placeholder: "回答する",class: "answer-content" %>
+        <%= form.text_field :user_name, placeholder: "ユーザー名", class: "answer-name" %>
+        <%= form.submit "ANSWER", class: "answer-btn" %>
+      <% end %>
+    </div>
+
+
+
+
+
+
 
 <% @answers.each do |answer| %>
 <div>
@@ -24,3 +27,6 @@
   投稿者：<%= answer.user_name %>
 </div>
 <% end %>
+
+  </div>
+</div>

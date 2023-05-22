@@ -190,3 +190,37 @@ header {
   background-color: #1c3667;
   border: none;
 }
+
+// 質問詳細・回答投稿＆表示画面 //
+
+.question-container {
+  padding-top: 80px;
+}
+
+.answer-form-container {
+  width: 520px;
+  margin: 40px auto;
+}
+
+.answer-content {
+  width: 100%;
+  height: 100px;
+  // margin-top: 15px;
+  line-height: 20px;
+}
+
+.answer-name {
+  width: 400px;
+  height: 30px;
+  margin-top: 10px;
+}
+
+.answer-btn {
+  width: 113px;
+  height: 30px;
+  text-align: center;
+  font-size: 18px;
+  color: #ffffff;
+  background-color: #1c3667;
+  border: none;
+}
