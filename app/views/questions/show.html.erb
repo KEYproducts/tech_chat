@@ -2,7 +2,7 @@
   <div class="main-container">
 
     <div class="question-container">
-      <%= render 'question', { question: @question } %>
+      <%= render partial: 'question', locals: { question: @question } %>
     </div>
 
     <div class="answer-form-container">
