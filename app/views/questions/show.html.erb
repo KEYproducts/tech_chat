@@ -13,20 +13,18 @@
       <% end %>
     </div>
 
-
-
-
-
-
-
-<% @answers.each do |answer| %>
-<div>
-  回答：<%= answer.content %>
-</div>
-<div>
-  投稿者：<%= answer.user_name %>
-</div>
-<% end %>
+    <div class="answers-container">
+      <% @answers.each do |answer| %>
+        <div class="answer">
+          <div class="answer__name">
+            回答者：<%= answer.user_name %>
+          </div>
+          <div class="answer__content">
+            <%= answer.content %>
+          </div>
+        </div>
+      <% end %>
+    </div>
 
   </div>
 </div>
